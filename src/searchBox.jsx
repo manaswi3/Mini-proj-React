@@ -7,10 +7,11 @@ export default function({upd}){
     let [city,setCity] = useState("");
     let [err,setErr]= useState();
     const API_URL = 'https://api.openweathermap.org/data/2.5/weather'
-    const API_KEY = 'eee1cbc885f482e4ef25bbd0d7303cdc';
-    const City_API = `https://api.unsplash.com/search/photos?query=${city}&client_id=jWLj2Cu4vqSNAJrErCTuNVfFQD8rUVNjA_IkQ7FWnA4`;
+    const API_KEY = import.meta.env.VITE_WEATHER_KEY;
+    const City_API = `https://api.unsplash.com/search/photos?query=${city}&client_id=${import.meta.env.VITE_UNSPLASH_KEY}`;
 
     let getWeatherInfo = async()=>{
+        console.log("Key being used:", import.meta.env.VITE_WEATHER_KEY);
         setErr(false);
         try{
             let res = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);

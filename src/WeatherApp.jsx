@@ -14,6 +14,7 @@ export default function(){
 
     let updateInfo = (result)=>{
         setWInfo(result);
+        setBox(false);
     }
     let handleCh=()=>{
         console.log("btn was clicked")

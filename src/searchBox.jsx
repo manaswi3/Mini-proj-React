@@ -11,7 +11,6 @@ export default function({upd}){
     const City_API = `https://api.unsplash.com/search/photos?query=${city}&client_id=${import.meta.env.VITE_UNSPLASH_KEY}`;
 
     let getWeatherInfo = async()=>{
-        console.log("Key being used:", import.meta.env.VITE_WEATHER_KEY);
         setErr(false);
         try{
             let res = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
